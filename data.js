@@ -21,6 +21,7 @@ function generationData(type) {
         review: generationReview()//отзывы
     };
     let tmpObj = {};
+    rating = faker.integer(from = 1, to = 10);
     tmpObj = {
         name: (Math.round(Math.random())) ? 'ИП ' + faker.last_name : `${(Math.round(Math.random())) ? 'ОАО' : 'ООО'} "${fakerEN.last_name}"`,
         location: (Math.round(Math.random())) ? 'Санкт-Петербург' : 'Москва',
@@ -28,8 +29,8 @@ function generationData(type) {
         logo: logos[faker.integer(from = 0, to = logos.length - 1)],// логтип
         zadania: zadania[faker.integer(from = 0, to = zadania.length - 1)],
         piar: piar[faker.integer(from = 0, to = piar.length - 1)],
-        rating: faker.integer(from = 1, to = 10), //рейтинг,
-        typeReyt: ['red','red', 'red', 'yellow', 'yellow', 'yellow', 'yellow', 'green', 'green', 'green'][tmpObj.rating-1]
+        rating, //рейтинг,
+        typeReyt: ['red','red', 'red', 'yellow', 'yellow', 'yellow', 'yellow', 'green', 'green', 'green'][rating-1]
     };
     data[type].push(tmpObj);
 }
