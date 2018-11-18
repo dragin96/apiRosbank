@@ -29,7 +29,7 @@ function generationData(type) {
         zadania: zadania[faker.integer(from = 0, to = zadania.length - 1)],
         piar: piar[faker.integer(from = 0, to = piar.length - 1)],
         rating: faker.integer(from = 1, to = 10), //рейтинг,
-        typeReyt: ['red','red', 'red', 'yellow', 'yellow', 'yellow', 'yellow', 'green', 'green', 'green'][this.rating]
+        typeReyt: ['red','red', 'red', 'yellow', 'yellow', 'yellow', 'yellow', 'green', 'green', 'green'][tmpObj.rating-1]
     };
     data[type].push(tmpObj);
 }
